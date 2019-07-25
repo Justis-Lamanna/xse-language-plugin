@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "XSE",
+	"patterns": [
+		{ "include": "#strings" },
+		{ "include": "#commands" },
+		{ "include": "#comments" },
+		{ "include": "#numbers" },
+		{ "include": "#directives"}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.apostrophe.xse",
+				"match": "('|;|//).*$"
+			}]
+		},
+		"strings": {
+			"patterns": [{
+				"name": "string.quoted.single.xse",
+				"begin": "^=",
+				"end": "$",
+				"patterns": [
+					{
+						"name": "constant.character",
+						"match": "\\\\h[0-9a-fA-F]{2}"
+					},
+					{
+						"name": "constant.character.escape.xse",
+						"match": "\\\\[cnlpv]"
+					},
+					{
+						"name": "constant.language.xse",
+						"match": "\\[.+?\\]"
+					}
+				]
+			}]
+		},
+		"commands": {
+			"patterns": [{
+				"name": "entity.name.function.xse",
+				"match": "(^[a-z]+|(goto|call))"
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric.xse",
+				"match": "\\b((0x|&H)[0-9a-fA-F]+|[0-9]+)"
+			}]
+		},
+		"directives": {
+			"patterns": [{
+				"name": "meta.preprocessor.xse",
+				"match": "^#[A-Za-z]+"
+			}]
+		}
+	},
+	"scopeName": "source.xse"
+}

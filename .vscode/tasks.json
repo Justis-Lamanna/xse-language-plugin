@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "npmWatch",
+			"type": "shell",
+			"options": {
+				"shell": {
+					"executable": "C:\\Windows\\System32\\wsl.exe"
+				}
+			},
+			"command": "npm run watch",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"panel": "dedicated",
+				"reveal": "never"
+			},
+			"problemMatcher": [
+				"$tsc-watch"
+			]
+		},
+		{
+			"label": "npmCompile",
+			"type": "shell",
+			"options": {
+				"shell": {
+					"executable": "C:\\Windows\\System32\\wsl.exe"
+				}
+			},
+			"command": "npm run compile",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"panel": "dedicated",
+				"reveal": "never"
+			},
+			"problemMatcher": [
+				"$tsc"
+			]
+		}
+	]
+}
