@@ -6,10 +6,12 @@
 		"rootDir": ".",
 		"sourceMap": true
 	},
-	"include": [
-		"client"
+	"exclude": [
+		"node_modules",
+		".vscode-test"
 	],
 	"references": [
-		{ "path": "./client"}
+		{ "path": "./client" },
+		{ "path": "./server" }
 	]
 }

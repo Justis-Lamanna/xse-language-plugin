@@ -2,7 +2,8 @@
 	"name": "pkmn-xse",
 	"displayName": "XSE",
 	"description": "Syntax Highlighting for XSE (eXtreme Script Editor)",
-	"version": "0.0.1",
+	"author": "Lucbui",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
@@ -35,13 +36,13 @@
 			"type": "object",
 			"title": "Example configuration",
 			"properties": {
-				"languageServerExample.maxNumberOfProblems": {
+				"xseLanguageServer.maxNumberOfProblems": {
 					"scope": "resource",
 					"type": "number",
 					"default": 100,
 					"description": "Controls the maximum number of problems produced by the server."
 				},
-				"languageServerExample.trace.server": {
+				"xseLanguageServer.trace.server": {
 					"scope": "window",
 					"type": "string",
 					"enum": [
@@ -61,14 +62,14 @@
 	"main": "./client/out/extension",
 	"scripts": {
 		"vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
-		"compile": "tsc -p client",
-		"watch": "tsc -p client -w",
-		"postinstall": "cd client && npm install && cd .."
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"postinstall": "cd client && npm install && cd ../server && npm install && cd .."
 	},
 	"devDependencies": {
-		"@types/mocha": "^5.2.0",
-		"@types/node": "^8.0.0",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
 		"tslint": "^5.16.0",
-		"typescript": "^3.5.1"
+		"typescript": "^3.6.4"
 	}
 }

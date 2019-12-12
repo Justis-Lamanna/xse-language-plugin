@@ -4,8 +4,7 @@
 		"target": "es6",
 		"outDir": "out",
 		"rootDir": "src",
-		"sourceMap": true,
-		"composite": true
+		"sourceMap": true
 	},
 	"include": [
 		"src"

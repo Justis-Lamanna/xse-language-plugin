@@ -9,15 +9,12 @@
 					"executable": "C:\\Windows\\System32\\wsl.exe"
 				}
 			},
-			"command": "npm run watch",
+			"command": "tsc -p client -w",
 			"isBackground": true,
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
+			"group": "build",
 			"presentation": {
 				"panel": "dedicated",
-				"reveal": "never"
+				"reveal": "always"
 			},
 			"problemMatcher": [
 				"$tsc-watch"
@@ -31,14 +28,14 @@
 					"executable": "C:\\Windows\\System32\\wsl.exe"
 				}
 			},
-			"command": "npm run compile",
+			"command": "tsc -p client",
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
 			"presentation": {
 				"panel": "dedicated",
-				"reveal": "never"
+				"reveal": "always"
 			},
 			"problemMatcher": [
 				"$tsc"
